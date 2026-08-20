@@ -1,0 +1,454 @@
+/* 90s Retro Style CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'MS Sans Serif', Arial, sans-serif;
+    background-color: #c0c0c0;
+    background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,.5) 2px, rgba(255,255,255,.5) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,.5) 2px, rgba(255,255,255,.5) 4px);
+    background-size: 4px 4px;
+    color: #000;
+    padding: 10px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #c0c0c0;
+    border: 2px solid;
+    border-color: #dfdfdf #808080 #808080 #dfdfdf;
+    box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;
+    padding: 0;
+}
+
+/* Header Section */
+.header {
+    background: linear-gradient(to right, #000080, #1084d7);
+    padding: 15px;
+    border-bottom: 2px solid #808080;
+    display: flex;
+    align-items: center;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    height: 50px;
+    filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.3));
+}
+
+.header h1 {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Navigation Tabs */
+.nav-section {
+    background-color: #c0c0c0;
+    padding: 8px;
+    border-bottom: 2px solid #808080;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.tabs {
+    display: flex;
+    gap: 5px;
+    flex: 1;
+}
+
+.tab-btn {
+    padding: 6px 16px;
+    background-color: #c0c0c0;
+    border: 2px solid;
+    border-color: #dfdfdf #808080 #808080 #dfdfdf;
+    cursor: pointer;
+    font-family: 'MS Sans Serif', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    transition: all 0.1s;
+    box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #404040;
+}
+
+.tab-btn:hover:not(.active) {
+    box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #404040;
+}
+
+.tab-btn.active {
+    background-color: #c0c0c0;
+    border-color: #dfdfdf #808080 #808080 #dfdfdf;
+    font-weight: bold;
+    box-shadow: inset -1px -1px 0 #ffffff, inset 1px 1px 0 #808080;
+}
+
+.tab-btn:active {
+    box-shadow: inset -1px -1px 0 #ffffff, inset 1px 1px 0 #808080;
+}
+
+.tab-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.search-box {
+    padding: 4px 6px;
+    border: 2px solid;
+    border-color: #808080 #dfdfdf #dfdfdf #808080;
+    background-color: #fff;
+    font-family: 'MS Sans Serif', Arial, sans-serif;
+    font-size: 12px;
+    width: 180px;
+    box-shadow: inset 1px 1px 0 #dfdfdf;
+}
+
+.print-btn {
+    padding: 6px 12px;
+    background-color: #c0c0c0;
+    border: 2px solid;
+    border-color: #dfdfdf #808080 #808080 #dfdfdf;
+    cursor: pointer;
+    font-family: 'MS Sans Serif', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #404040;
+}
+
+.print-btn:active {
+    box-shadow: inset -1px -1px 0 #ffffff, inset 1px 1px 0 #808080;
+}
+
+/* Content Area */
+.content {
+    padding: 10px;
+    min-height: 600px;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Inventory Grid */
+.inventory-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    height: 600px;
+}
+
+.inventory-list, .inventory-detail {
+    border: 2px solid;
+    border-color: #808080 #dfdfdf #dfdfdf #808080;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: inset 1px 1px 0 #dfdfdf;
+    overflow: auto;
+}
+
+.inventory-list h2, .inventory-detail h2 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #c0c0c0;
+}
+
+.items-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.item-card {
+    background-color: #f0f0f0;
+    border: 1px solid #c0c0c0;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.item-card:hover {
+    background-color: #e0e0e0;
+    border: 1px solid #808080;
+}
+
+.item-card.selected {
+    background-color: #000080;
+    color: #fff;
+    border: 1px solid #dfdfdf;
+}
+
+.item-image {
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    border: 1px solid #c0c0c0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #999;
+}
+
+.item-info {
+    text-align: center;
+    font-size: 12px;
+}
+
+.item-name {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.item-count {
+    font-size: 11px;
+    color: #666;
+}
+
+.item-card.selected .item-count {
+    color: #fff;
+}
+
+/* Detail Panel */
+.detail-panel {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.dept-box {
+    background-color: #f5f5f5;
+    border: 1px solid #c0c0c0;
+    padding: 12px;
+    text-align: center;
+}
+
+.dept-name {
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 8px;
+    color: #000080;
+}
+
+.dept-count {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d32f2f;
+}
+
+.dept-label {
+    font-size: 10px;
+    color: #666;
+    margin-top: 4px;
+}
+
+/* Data Tables */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid #c0c0c0;
+}
+
+.data-table thead {
+    background-color: #000080;
+    color: #fff;
+}
+
+.data-table th {
+    padding: 10px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid #808080;
+}
+
+.data-table td {
+    padding: 8px 10px;
+    font-size: 12px;
+    border: 1px solid #e0e0e0;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+.data-table tbody tr:hover {
+    background-color: #e3f2fd;
+}
+
+/* Consumables Section */
+.consumables-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.instruction-box {
+    background-color: #fff;
+    border: 2px solid;
+    border-color: #808080 #dfdfdf #dfdfdf #808080;
+    padding: 15px;
+    box-shadow: inset 1px 1px 0 #dfdfdf;
+}
+
+.instruction-box h3 {
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: #000080;
+    border-bottom: 2px solid #000080;
+    padding-bottom: 8px;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.step {
+    background-color: #f0f0f0;
+    border-left: 4px solid #000080;
+    padding: 10px;
+}
+
+.step h4 {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #000080;
+}
+
+.step p {
+    font-size: 11px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.consumables-inventory {
+    background-color: #fff;
+    border: 2px solid;
+    border-color: #808080 #dfdfdf #dfdfdf #808080;
+    padding: 15px;
+    box-shadow: inset 1px 1px 0 #dfdfdf;
+    overflow: auto;
+}
+
+.consumables-inventory h3 {
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: #000080;
+    border-bottom: 2px solid #000080;
+    padding-bottom: 8px;
+}
+
+.consumables-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+.consumables-table thead {
+    background-color: #000080;
+    color: #fff;
+}
+
+.consumables-table th {
+    padding: 8px;
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid #808080;
+}
+
+.consumables-table td {
+    padding: 6px 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.consumables-table tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+}
+
+::-webkit-scrollbar-track {
+    background: #c0c0c0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #dfdfdf;
+    border: 2px solid;
+    border-color: #dfdfdf #808080 #808080 #dfdfdf;
+}
+
+::-webkit-scrollbar-corner {
+    background: #c0c0c0;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .inventory-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .consumables-section {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-panel {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .tabs {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .tab-controls {
+        width: 100%;
+    }
+
+    .search-box {
+        flex: 1;
+    }
+
+    .detail-panel {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

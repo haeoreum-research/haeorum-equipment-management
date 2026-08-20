@@ -47,13 +47,16 @@
     },
     "mac": {
       "target": [
-        "app",
-        "dmg"
+        "default"
       ],
       "icon": "assets/icon.icns",
-      "category": "public.app-category.utilities"
+      "category": "public.app-category.utilities",
+      "type": "distribution"
     },
     "dmg": {
+      "background": null,
+      "icon": "assets/icon.icns",
+      "iconSize": 128,
       "contents": [
         {
           "x": 130,

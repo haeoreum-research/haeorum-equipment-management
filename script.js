@@ -127,6 +127,27 @@ const statusColors = {
     '폐기 처리': '#dc3545'
 };
 
+// Date utility functions
+function parseDate(dateStr) {
+    const [year, month, day] = dateStr.split('/').map(Number);
+    return new Date(year, month - 1, day);
+}
+
+function formatDate(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}/${month}/${day}`;
+}
+
+function getRandomDateAfter(baseDate, maxDaysLater = 365) {
+    const base = parseDate(baseDate);
+    const daysToAdd = Math.floor(Math.random() * maxDaysLater) + 1;
+    const newDate = new Date(base);
+    newDate.setDate(newDate.getDate() + daysToAdd);
+    return formatDate(newDate);
+}
+
 // Generate inventory items in grid format
 function initInventory() {
     const container = document.getElementById('inventoryItems');
@@ -201,7 +222,6 @@ function selectItem(itemId) {
         box.innerHTML = `
             <div class="dept-name">${dist.dept}</div>
             <div class="dept-count">${dist.count}</div>
-            <div class="dept-label">보유중</div>
         `;
         gridDiv.appendChild(box);
     });
@@ -275,8 +295,9 @@ function generateOutboundData() {
     equipmentData.forEach((item, index) => {
         const row = document.createElement('tr');
         const outQuantity = Math.floor(item.quantity * (Math.random() * 0.5 + 0.2));
+        const outDate = getRandomDateAfter(item.date, 365);
         row.innerHTML = `
-            <td>${item.date}</td>
+            <td>${outDate}</td>
             <td>${item.code}</td>
             <td>${item.name}</td>
             <td>${departments[index % departments.length]}</td>

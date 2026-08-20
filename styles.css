@@ -22,8 +22,8 @@ body {
 }
 
 .container {
-    width: 1200px;
-    max-height: 850px;
+    width: 1500px;
+    height: 900px;
     background-color: #c0c0c0;
     border: 3px solid;
     border-color: #dfdfdf #808080 #808080 #dfdfdf;
@@ -39,7 +39,8 @@ body {
     background: linear-gradient(to right, #000080, #1084d7);
     padding: 0;
     border-bottom: 3px solid #808080;
-    min-height: 35px;
+    height: 40px;
+    flex-shrink: 0;
 }
 
 .header-top {
@@ -52,7 +53,7 @@ body {
 
 .title-bar {
     color: #fff;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
     padding: 3px 6px;
     flex: 1;
@@ -85,7 +86,7 @@ body {
 /* Main Content Layout */
 .main-content {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 320px 1fr;
     gap: 0;
     flex: 1;
     background-color: #fff;
@@ -100,46 +101,49 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
     overflow-y: auto;
+    flex-shrink: 0;
 }
 
 .logo-container {
-    width: 260px;
-    height: auto;
+    width: 280px;
+    height: 180px;
     background-color: #fff;
     border: 2px solid #c0c0c0;
     border-radius: 6px;
-    padding: 10px;
+    padding: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
 }
 
 .logo-img {
-    width: 100%;
-    height: auto;
-    max-width: 240px;
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
 }
 
 .info-section {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.7);
-    padding: 12px;
+    padding: 14px;
     border-radius: 4px;
     width: 90%;
+    flex-shrink: 0;
 }
 
 .info-text {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
     color: #003d9e;
     margin-bottom: 4px;
 }
 
 .info-version {
-    font-size: 11px;
+    font-size: 12px;
     color: #666;
 }
 
@@ -149,19 +153,21 @@ body {
     flex-direction: column;
     background-color: #fff;
     overflow: hidden;
+    flex: 1;
 }
 
 /* Navigation Tabs */
 .nav-section {
     background-color: #f5f5f5;
-    padding: 8px 10px;
+    padding: 10px 12px;
     border-bottom: 2px solid #c0c0c0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     flex-wrap: wrap;
-    min-height: 50px;
+    min-height: 55px;
+    flex-shrink: 0;
 }
 
 .tabs {
@@ -171,13 +177,13 @@ body {
 }
 
 .tab-btn {
-    padding: 6px 14px;
+    padding: 7px 16px;
     background-color: #e0e0e0;
     border: 2px solid;
     border-color: #dfdfdf #808080 #808080 #dfdfdf;
     cursor: pointer;
     font-family: 'MS Sans Serif', Arial, sans-serif;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: normal;
     color: #000;
     transition: all 0.1s;
@@ -202,29 +208,29 @@ body {
 
 .tab-controls {
     display: flex;
-    gap: 6px;
+    gap: 8px;
     align-items: center;
 }
 
 .search-box {
-    padding: 4px 6px;
+    padding: 5px 8px;
     border: 2px solid;
     border-color: #808080 #dfdfdf #dfdfdf #808080;
     background-color: #fff;
     font-family: 'MS Sans Serif', Arial, sans-serif;
-    font-size: 11px;
-    width: 160px;
+    font-size: 12px;
+    width: 180px;
     box-shadow: inset 1px 1px 0 #dfdfdf;
 }
 
 .print-btn {
-    padding: 4px 12px;
+    padding: 5px 14px;
     background-color: #c0c0c0;
     border: 2px solid;
     border-color: #dfdfdf #808080 #808080 #dfdfdf;
     cursor: pointer;
     font-family: 'MS Sans Serif', Arial, sans-serif;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: normal;
     box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #404040;
     white-space: nowrap;
@@ -236,14 +242,17 @@ body {
 
 /* Content Area */
 .content {
-    padding: 15px;
+    padding: 16px;
     overflow-y: auto;
     flex: 1;
     background-color: #fff;
+    height: 100%;
 }
 
 .tab-content {
     display: none;
+    height: 100%;
+    min-height: 600px;
 }
 
 .tab-content.active {
@@ -251,9 +260,9 @@ body {
 }
 
 .tab-content h2 {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bold;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     color: #003d9e;
     border-bottom: 3px solid #003d9e;
     padding-bottom: 8px;
@@ -263,22 +272,22 @@ body {
 .inventory-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    height: auto;
+    gap: 16px;
+    height: 100%;
 }
 
 .inventory-list, .inventory-detail {
     border: 2px solid;
     border-color: #808080 #dfdfdf #dfdfdf #808080;
     background-color: #fff;
-    padding: 12px;
+    padding: 14px;
     box-shadow: inset 1px 1px 0 #dfdfdf;
-    overflow: auto;
-    max-height: 500px;
+    overflow-y: auto;
+    min-height: 500px;
 }
 
 .inventory-list h2, .inventory-detail h2 {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: bold;
     margin-bottom: 12px;
     padding-bottom: 8px;
@@ -289,14 +298,14 @@ body {
 #inventoryItems {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 12px;
 }
 
 /* Product Card Styling */
 .product-card {
     background-color: #f0f0f0;
     border: 2px solid #c0c0c0;
-    padding: 12px;
+    padding: 14px;
     cursor: pointer;
     transition: all 0.2s;
     display: flex;
@@ -305,6 +314,8 @@ body {
     gap: 8px;
     text-align: center;
     border-radius: 4px;
+    min-height: 140px;
+    justify-content: center;
 }
 
 .product-card:hover {
@@ -320,15 +331,15 @@ body {
 }
 
 .product-icon {
-    font-size: 40px;
+    font-size: 48px;
     line-height: 1;
 }
 
 .product-name {
     font-weight: bold;
-    font-size: 11px;
+    font-size: 12px;
     margin: 2px 0;
-    line-height: 1.2;
+    line-height: 1.3;
 }
 
 .product-code {
@@ -342,9 +353,9 @@ body {
 }
 
 .product-quantity {
-    font-size: 10px;
+    font-size: 11px;
     color: #666;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .product-card.selected .product-quantity {
@@ -352,12 +363,12 @@ body {
 }
 
 .available-btn {
-    padding: 4px 10px;
+    padding: 5px 12px;
     background-color: #4a9eff;
     color: #fff;
     border: 2px solid #2a7ecf;
     border-radius: 3px;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.2s;
@@ -373,13 +384,13 @@ body {
 
 /* Detail Panel */
 .detail-title {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     padding-bottom: 10px;
     border-bottom: 2px solid #c0c0c0;
 }
 
 .detail-title h3 {
-    font-size: 12px;
+    font-size: 13px;
     color: #003d9e;
     margin-bottom: 4px;
 }
@@ -387,33 +398,33 @@ body {
 .distribution-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 8px;
+    gap: 10px;
 }
 
 .dept-box {
     background-color: #f5f5f5;
     border: 2px solid #c0c0c0;
-    padding: 10px;
+    padding: 12px;
     text-align: center;
     border-radius: 4px;
 }
 
 .dept-name {
     font-weight: bold;
-    font-size: 10px;
-    margin-bottom: 6px;
+    font-size: 11px;
+    margin-bottom: 8px;
     color: #003d9e;
-    line-height: 1.2;
+    line-height: 1.3;
 }
 
 .dept-count {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: bold;
     color: #d32f2f;
 }
 
 .dept-label {
-    font-size: 9px;
+    font-size: 10px;
     color: #666;
     margin-top: 4px;
 }
@@ -424,7 +435,7 @@ body {
     border-collapse: collapse;
     background-color: #fff;
     border: 2px solid #c0c0c0;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 .data-table thead {
@@ -433,16 +444,16 @@ body {
 }
 
 .data-table th {
-    padding: 8px;
+    padding: 10px;
     text-align: left;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: bold;
     border: 1px solid #808080;
 }
 
 .data-table td {
-    padding: 6px 8px;
-    font-size: 11px;
+    padding: 8px 10px;
+    font-size: 12px;
     border: 1px solid #e0e0e0;
 }
 
@@ -458,47 +469,48 @@ body {
 .consumables-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    gap: 16px;
 }
 
 .instruction-box {
     background-color: #fff;
     border: 2px solid;
     border-color: #808080 #dfdfdf #dfdfdf #808080;
-    padding: 12px;
+    padding: 14px;
     box-shadow: inset 1px 1px 0 #dfdfdf;
+    overflow-y: auto;
 }
 
 .instruction-box h3 {
-    font-size: 12px;
-    margin-bottom: 10px;
+    font-size: 13px;
+    margin-bottom: 12px;
     color: #003d9e;
     border-bottom: 2px solid #c0c0c0;
-    padding-bottom: 6px;
+    padding-bottom: 8px;
 }
 
 .steps {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
 }
 
 .step {
     background-color: #f5f5f5;
     border-left: 4px solid #003d9e;
-    padding: 8px;
+    padding: 10px;
 }
 
 .step h4 {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: bold;
     margin-bottom: 4px;
     color: #003d9e;
 }
 
 .step p {
-    font-size: 10px;
-    line-height: 1.4;
+    font-size: 11px;
+    line-height: 1.5;
     color: #333;
 }
 
@@ -506,23 +518,23 @@ body {
     background-color: #fff;
     border: 2px solid;
     border-color: #808080 #dfdfdf #dfdfdf #808080;
-    padding: 12px;
+    padding: 14px;
     box-shadow: inset 1px 1px 0 #dfdfdf;
-    overflow: auto;
+    overflow-y: auto;
 }
 
 .consumables-inventory h3 {
-    font-size: 12px;
-    margin-bottom: 10px;
+    font-size: 13px;
+    margin-bottom: 12px;
     color: #003d9e;
     border-bottom: 2px solid #c0c0c0;
-    padding-bottom: 6px;
+    padding-bottom: 8px;
 }
 
 .consumables-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 .consumables-table thead {
@@ -531,14 +543,14 @@ body {
 }
 
 .consumables-table th {
-    padding: 6px;
+    padding: 8px;
     text-align: left;
     font-weight: bold;
     border: 1px solid #808080;
 }
 
 .consumables-table td {
-    padding: 5px 6px;
+    padding: 6px 8px;
     border: 1px solid #e0e0e0;
 }
 
@@ -551,7 +563,8 @@ body {
     background-color: #c0c0c0;
     border-top: 3px solid;
     border-color: #dfdfdf #808080 #808080 #dfdfdf;
-    min-height: 24px;
+    height: 28px;
+    flex-shrink: 0;
 }
 
 .status-bar {
@@ -564,7 +577,7 @@ body {
 }
 
 .status-text {
-    font-size: 11px;
+    font-size: 12px;
     color: #000;
     padding: 3px 6px;
     flex: 1;
@@ -591,9 +604,10 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 1400px) {
+@media (max-width: 1600px) {
     .container {
         width: 95%;
+        height: 90vh;
     }
 
     .inventory-grid {
@@ -612,12 +626,13 @@ body {
         border-right: none;
         border-bottom: 2px solid #c0c0c0;
         flex-direction: row;
-        gap: 20px;
+        gap: 25px;
         padding: 15px;
     }
 
     .logo-container {
-        width: 200px;
+        width: 220px;
+        height: 140px;
     }
 
     #inventoryItems {

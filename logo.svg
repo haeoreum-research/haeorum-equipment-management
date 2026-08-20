@@ -1,24 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
-    <!-- Background -->
-    <rect width="200" height="80" fill="#ffffff"/>
-    
-    <!-- Circle with horizontal lines -->
-    <circle cx="40" cy="40" r="35" fill="none" stroke="#003d9e" stroke-width="2"/>
-    
-    <!-- Horizontal lines in circle -->
-    <line x1="10" y1="20" x2="70" y2="20" stroke="#003d9e" stroke-width="1.5"/>
-    <line x1="8" y1="28" x2="72" y2="28" stroke="#003d9e" stroke-width="1.5"/>
-    <line x1="6" y1="36" x2="74" y2="36" stroke="#003d9e" stroke-width="1.5"/>
-    <line x1="8" y1="44" x2="72" y2="44" stroke="#003d9e" stroke-width="1.5"/>
-    <line x1="10" y1="52" x2="70" y2="52" stroke="#003d9e" stroke-width="1.5"/>
-    <line x1="15" y1="60" x2="65" y2="60" stroke="#003d9e" stroke-width="1.5"/>
-    
-    <!-- Star on top -->
-    <g transform="translate(40, 12)">
-        <polygon points="0,-8 2,-2 8,-2 3,2 5,8 0,4 -5,8 -3,2 -8,-2 -2,-2" fill="#003d9e"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200">
+    <!-- Left star -->
+    <g transform="translate(60, 80)">
+        <polygon points="0,-15 3.5,-4 15,-4 6,3 9,15 0,8 -9,15 -6,3 -15,-4 -3.5,-4" fill="#003d9e" stroke="#003d9e" stroke-width="0.5"/>
     </g>
     
-    <!-- Text -->
-    <text x="110" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#000000">해오름</text>
-    <text x="110" y="50" font-family="Arial, sans-serif" font-size="12" fill="#666666" letter-spacing="2">RESEARCH LAB</text>
+    <!-- Main circle with horizontal lines (sunrise/horizon) -->
+    <g transform="translate(200, 100)">
+        <!-- Circle outline -->
+        <circle cx="0" cy="0" r="80" fill="none" stroke="#003d9e" stroke-width="3"/>
+        
+        <!-- Horizontal lines (representing sun rays/horizon lines) -->
+        <line x1="-100" y1="-60" x2="100" y2="-60" stroke="#003d9e" stroke-width="6" stroke-linecap="round"/>
+        <line x1="-110" y1="-40" x2="110" y2="-40" stroke="#003d9e" stroke-width="6" stroke-linecap="round"/>
+        <line x1="-115" y1="-20" x2="115" y2="-20" stroke="#003d9e" stroke-width="6" stroke-linecap="round"/>
+        <line x1="-115" y1="0" x2="115" y2="0" stroke="#003d9e" stroke-width="6" stroke-linecap="round"/>
+        <line x1="-110" y1="20" x2="110" y2="20" stroke="#003d9e" stroke-width="6" stroke-linecap="round"/>
+        <line x1="-100" y1="40" x2="100" y2="40" stroke="#003d9e" stroke-width="6" stroke-linecap="round"/>
+        <line x1="-80" y1="60" x2="80" y2="60" stroke="#003d9e" stroke-width="6" stroke-linecap="round"/>
+        
+        <!-- Top star/spike -->
+        <polygon points="0,-95 4,-75 0,-85 -4,-75" fill="#003d9e" stroke="#003d9e" stroke-width="1"/>
+    </g>
+    
+    <!-- Right star -->
+    <g transform="translate(440, 50)">
+        <polygon points="0,-10 2.5,-3 10,-3 4,2 6,10 0,5.5 -6,10 -4,2 -10,-3 -2.5,-3" fill="#003d9e" stroke="#003d9e" stroke-width="0.5"/>
+    </g>
+    
+    <!-- Korean text -->
+    <text x="520" y="120" font-family="Arial, sans-serif" font-size="64" font-weight="bold" fill="#000000">
+        해오름 연구소
+    </text>
+    
+    <!-- English text -->
+    <text x="520" y="165" font-family="Arial, sans-serif" font-size="28" font-weight="normal" fill="#000000" letter-spacing="8">
+        HAEORUM RESEARCH LAB
+    </text>
 </svg>

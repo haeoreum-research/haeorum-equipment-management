@@ -1,15 +1,17 @@
 // Equipment data
 const equipmentData = [
-    { id: 1, name: '슬림 노트북', code: 'NB001', quantity: 15 },
-    { id: 2, name: '데스크탑 컴퓨터', code: 'PC001', quantity: 8 },
-    { id: 3, name: '프린터', code: 'PR001', quantity: 2 },
-    { id: 4, name: '스캐너', code: 'SC001', quantity: 3 },
-    { id: 5, name: '모니터', code: 'MN001', quantity: 12 },
-    { id: 6, name: '키보드', code: 'KB001', quantity: 25 },
-    { id: 7, name: '마우스', code: 'MS001', quantity: 30 },
-    { id: 8, name: '헤드셋', code: 'HS001', quantity: 5 },
-    { id: 9, name: '웹캠', code: 'WC001', quantity: 7 },
-    { id: 10, name: '외장 하드드라이브', code: 'HDD001', quantity: 10 }
+    { id: 1, name: '슬림 노트북', code: 'NB001', quantity: 15, category: '컴퓨터' },
+    { id: 2, name: '데스크탑 컴퓨터', code: 'PC001', quantity: 8, category: '컴퓨터' },
+    { id: 3, name: '프린터', code: 'PR001', quantity: 2, category: '주변장치' },
+    { id: 4, name: '스캐너', code: 'SC001', quantity: 3, category: '주변장치' },
+    { id: 5, name: '모니터', code: 'MN001', quantity: 12, category: '주변장치' },
+    { id: 6, name: '키보드', code: 'KB001', quantity: 25, category: '주변장치' },
+    { id: 7, name: '마우스', code: 'MS001', quantity: 30, category: '주변장치' },
+    { id: 8, name: '헤드셋', code: 'HS001', quantity: 5, category: '음향기기' },
+    { id: 9, name: '웹캠', code: 'WC001', quantity: 7, category: '카메라' },
+    { id: 10, name: '외장 하드드라이브', code: 'HDD001', quantity: 10, category: '저장장치' },
+    { id: 11, name: 'HDD (베타타입)', code: 'HDB001', quantity: 4, category: '저장장치' },
+    { id: 12, name: 'Server 실장', code: 'SRV001', quantity: 2, category: '서버' }
 ];
 
 const departments = [
@@ -22,38 +24,73 @@ const departments = [
 
 let selectedItem = null;
 
-// Generate inventory items
+// Equipment icons/emojis
+const equipmentIcons = {
+    '슬림 노트북': '💻',
+    '데스크탑 컴퓨터': '🖥️',
+    '프린터': '🖨️',
+    '스캐너': '📠',
+    '모니터': '🖥️',
+    '키보드': '⌨️',
+    '마우스': '🖱️',
+    '헤드셋': '🎧',
+    '웹캠': '📷',
+    '외장 하드드라이브': '💾',
+    'HDD (베타타입)': '💾',
+    'Server 실장': '🗄️'
+};
+
+// Generate inventory items in grid format
 function initInventory() {
     const container = document.getElementById('inventoryItems');
     container.innerHTML = '';
     
     equipmentData.forEach(item => {
         const card = document.createElement('div');
-        card.className = 'item-card';
+        card.className = 'product-card';
+        const icon = equipmentIcons[item.name] || '📦';
         card.innerHTML = `
-            <div class="item-image">?</div>
-            <div class="item-info">
-                <div class="item-name">${item.name}</div>
-                <div class="item-count">총 ${item.quantity}개</div>
-            </div>
+            <div class="product-icon">${icon}</div>
+            <div class="product-name">${item.name}</div>
+            <div class="product-code">${item.code}</div>
+            <div class="product-quantity">총 ${item.quantity}개</div>
+            <button class="available-btn" onclick="selectItem(${item.id})">Available</button>
         `;
-        card.onclick = () => selectItem(item, card);
+        card.onclick = (e) => {
+            if (!e.target.classList.contains('available-btn')) {
+                selectItem(item.id);
+            }
+        };
         container.appendChild(card);
     });
 }
 
 // Select item and show details
-function selectItem(item, element) {
+function selectItem(itemId) {
+    const item = equipmentData.find(e => e.id === itemId);
+    if (!item) return;
+    
     // Remove previous selection
-    document.querySelectorAll('.item-card').forEach(card => {
+    document.querySelectorAll('.product-card').forEach(card => {
         card.classList.remove('selected');
     });
-    element.classList.add('selected');
+    
+    // Mark selected card
+    event.currentTarget?.classList.add('selected');
     selectedItem = item;
     
     // Generate department distribution
     const detailPanel = document.getElementById('detailPanel');
     detailPanel.innerHTML = '';
+    
+    // Title
+    const titleDiv = document.createElement('div');
+    titleDiv.className = 'detail-title';
+    titleDiv.innerHTML = `
+        <h3>${item.name}</h3>
+        <p style="color: #666; font-size: 9px;">코드: ${item.code}</p>
+    `;
+    detailPanel.appendChild(titleDiv);
     
     let totalDistributed = 0;
     const distribution = [];
@@ -66,6 +103,9 @@ function selectItem(item, element) {
     });
     
     // Create dept boxes
+    const gridDiv = document.createElement('div');
+    gridDiv.className = 'distribution-grid';
+    
     distribution.forEach(dist => {
         const box = document.createElement('div');
         box.className = 'dept-box';
@@ -74,14 +114,16 @@ function selectItem(item, element) {
             <div class="dept-count">${dist.count}</div>
             <div class="dept-label">보유중</div>
         `;
-        detailPanel.appendChild(box);
+        gridDiv.appendChild(box);
     });
+    
+    detailPanel.appendChild(gridDiv);
 }
 
 // Filter inventory
 function filterInventory() {
     const searchValue = document.getElementById('searchInput').value.toLowerCase();
-    const cards = document.querySelectorAll('.item-card');
+    const cards = document.querySelectorAll('.product-card');
     
     cards.forEach(card => {
         const text = card.textContent.toLowerCase();

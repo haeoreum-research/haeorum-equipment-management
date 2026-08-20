@@ -15,8 +15,7 @@ function createWindow() {
       contextIsolation: true,
       enableRemoteModule: false,
       sandbox: true
-    },
-    icon: path.join(__dirname, 'assets', 'icon.png')
+    }
   });
 
   // 로컬 파일을 로드

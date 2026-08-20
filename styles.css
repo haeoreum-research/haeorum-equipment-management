@@ -1,4 +1,4 @@
-/* 90s Retro Style CSS */
+/* 90s Retro Style CSS - MSN Messenger Style */
 
 * {
     margin: 0;
@@ -15,54 +15,142 @@ body {
     background-size: 4px 4px;
     color: #000;
     padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 .container {
-    max-width: 1400px;
-    margin: 0 auto;
+    width: 900px;
     background-color: #c0c0c0;
     border: 2px solid;
     border-color: #dfdfdf #808080 #808080 #dfdfdf;
-    box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;
-    padding: 0;
+    box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #404040, 
+                0 0 0 1px #dfdfdf;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
-/* Header Section */
+/* Header/Title Bar */
 .header {
     background: linear-gradient(to right, #000080, #1084d7);
-    padding: 15px;
+    padding: 0;
     border-bottom: 2px solid #808080;
+}
+
+.header-top {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    padding: 2px 2px;
 }
 
-.logo-section {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.logo {
-    height: 50px;
-    filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.3));
-}
-
-.header h1 {
+.title-bar {
     color: #fff;
-    font-size: 24px;
+    font-size: 11px;
     font-weight: bold;
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+    padding: 2px 4px;
+    flex: 1;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.window-controls {
+    display: flex;
+    gap: 2px;
+}
+
+.control-btn {
+    width: 16px;
+    height: 14px;
+    background-color: #c0c0c0;
+    border: 1px solid;
+    border-color: #dfdfdf #808080 #808080 #dfdfdf;
+    padding: 0;
+    font-size: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:active {
+    border-color: #808080 #dfdfdf #dfdfdf #808080;
+}
+
+/* Main Content Layout */
+.main-content {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 0;
+    flex: 1;
+    background-color: #fff;
+}
+
+/* Left Panel */
+.left-panel {
+    background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+    border-right: 1px solid #c0c0c0;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    min-height: 500px;
+}
+
+.logo-container {
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    border: 1px solid #c0c0c0;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.info-section {
+    text-align: center;
+}
+
+.info-text {
+    font-size: 12px;
+    font-weight: bold;
+    color: #003d9e;
+    margin-bottom: 4px;
+}
+
+.info-version {
+    font-size: 10px;
+    color: #666;
+}
+
+/* Right Panel */
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
 }
 
 /* Navigation Tabs */
 .nav-section {
-    background-color: #c0c0c0;
+    background-color: #f5f5f5;
     padding: 8px;
-    border-bottom: 2px solid #808080;
+    border-bottom: 1px solid #c0c0c0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .tabs {
@@ -72,25 +160,26 @@ body {
 }
 
 .tab-btn {
-    padding: 6px 16px;
-    background-color: #c0c0c0;
-    border: 2px solid;
+    padding: 6px 12px;
+    background-color: #e0e0e0;
+    border: 1px solid;
     border-color: #dfdfdf #808080 #808080 #dfdfdf;
     cursor: pointer;
     font-family: 'MS Sans Serif', Arial, sans-serif;
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 11px;
+    font-weight: normal;
     color: #000;
     transition: all 0.1s;
     box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #404040;
+    white-space: nowrap;
 }
 
 .tab-btn:hover:not(.active) {
-    box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #404040;
+    background-color: #f0f0f0;
 }
 
 .tab-btn.active {
-    background-color: #c0c0c0;
+    background-color: #fff;
     border-color: #dfdfdf #808080 #808080 #dfdfdf;
     font-weight: bold;
     box-shadow: inset -1px -1px 0 #ffffff, inset 1px 1px 0 #808080;
@@ -102,31 +191,32 @@ body {
 
 .tab-controls {
     display: flex;
-    gap: 8px;
+    gap: 6px;
     align-items: center;
 }
 
 .search-box {
     padding: 4px 6px;
-    border: 2px solid;
+    border: 1px solid;
     border-color: #808080 #dfdfdf #dfdfdf #808080;
     background-color: #fff;
     font-family: 'MS Sans Serif', Arial, sans-serif;
-    font-size: 12px;
-    width: 180px;
+    font-size: 11px;
+    width: 150px;
     box-shadow: inset 1px 1px 0 #dfdfdf;
 }
 
 .print-btn {
-    padding: 6px 12px;
+    padding: 4px 10px;
     background-color: #c0c0c0;
-    border: 2px solid;
+    border: 1px solid;
     border-color: #dfdfdf #808080 #808080 #dfdfdf;
     cursor: pointer;
     font-family: 'MS Sans Serif', Arial, sans-serif;
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 11px;
+    font-weight: normal;
     box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #404040;
+    white-space: nowrap;
 }
 
 .print-btn:active {
@@ -135,8 +225,10 @@ body {
 
 /* Content Area */
 .content {
-    padding: 10px;
-    min-height: 600px;
+    padding: 15px;
+    overflow-y: auto;
+    flex: 1;
+    background-color: #fff;
 }
 
 .tab-content {
@@ -147,16 +239,25 @@ body {
     display: block;
 }
 
+.tab-content h2 {
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #003d9e;
+    border-bottom: 2px solid #003d9e;
+    padding-bottom: 8px;
+}
+
 /* Inventory Grid */
 .inventory-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
-    height: 600px;
+    height: 400px;
 }
 
 .inventory-list, .inventory-detail {
-    border: 2px solid;
+    border: 1px solid;
     border-color: #808080 #dfdfdf #dfdfdf #808080;
     background-color: #fff;
     padding: 10px;
@@ -165,11 +266,12 @@ body {
 }
 
 .inventory-list h2, .inventory-detail h2 {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     margin-bottom: 10px;
     padding-bottom: 8px;
     border-bottom: 1px solid #c0c0c0;
+    color: #000;
 }
 
 .items-container {
@@ -187,45 +289,45 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
 }
 
 .item-card:hover {
-    background-color: #e0e0e0;
+    background-color: #e8e8e8;
     border: 1px solid #808080;
 }
 
 .item-card.selected {
-    background-color: #000080;
+    background: linear-gradient(to bottom, #000080, #1084d7);
     color: #fff;
     border: 1px solid #dfdfdf;
 }
 
 .item-image {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background-color: #fff;
     border: 1px solid #c0c0c0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 40px;
+    font-size: 32px;
     font-weight: bold;
     color: #999;
 }
 
 .item-info {
     text-align: center;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .item-name {
     font-weight: bold;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 .item-count {
-    font-size: 11px;
+    font-size: 10px;
     color: #666;
 }
 
@@ -237,31 +339,31 @@ body {
 .detail-panel {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
+    gap: 8px;
 }
 
 .dept-box {
     background-color: #f5f5f5;
     border: 1px solid #c0c0c0;
-    padding: 12px;
+    padding: 10px;
     text-align: center;
 }
 
 .dept-name {
     font-weight: bold;
-    font-size: 12px;
-    margin-bottom: 8px;
-    color: #000080;
+    font-size: 10px;
+    margin-bottom: 6px;
+    color: #003d9e;
 }
 
 .dept-count {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     color: #d32f2f;
 }
 
 .dept-label {
-    font-size: 10px;
+    font-size: 9px;
     color: #666;
     margin-top: 4px;
 }
@@ -275,21 +377,21 @@ body {
 }
 
 .data-table thead {
-    background-color: #000080;
+    background-color: #003d9e;
     color: #fff;
 }
 
 .data-table th {
-    padding: 10px;
+    padding: 8px;
     text-align: left;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
     border: 1px solid #808080;
 }
 
 .data-table td {
-    padding: 8px 10px;
-    font-size: 12px;
+    padding: 6px 8px;
+    font-size: 11px;
     border: 1px solid #e0e0e0;
 }
 
@@ -310,87 +412,109 @@ body {
 
 .instruction-box {
     background-color: #fff;
-    border: 2px solid;
+    border: 1px solid;
     border-color: #808080 #dfdfdf #dfdfdf #808080;
-    padding: 15px;
+    padding: 12px;
     box-shadow: inset 1px 1px 0 #dfdfdf;
 }
 
 .instruction-box h3 {
-    font-size: 14px;
-    margin-bottom: 12px;
-    color: #000080;
-    border-bottom: 2px solid #000080;
-    padding-bottom: 8px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: #003d9e;
+    border-bottom: 1px solid #c0c0c0;
+    padding-bottom: 6px;
 }
 
 .steps {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
 }
 
 .step {
-    background-color: #f0f0f0;
-    border-left: 4px solid #000080;
-    padding: 10px;
+    background-color: #f5f5f5;
+    border-left: 3px solid #003d9e;
+    padding: 8px;
 }
 
 .step h4 {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
-    margin-bottom: 6px;
-    color: #000080;
+    margin-bottom: 4px;
+    color: #003d9e;
 }
 
 .step p {
-    font-size: 11px;
-    line-height: 1.5;
+    font-size: 10px;
+    line-height: 1.4;
     color: #333;
 }
 
 .consumables-inventory {
     background-color: #fff;
-    border: 2px solid;
+    border: 1px solid;
     border-color: #808080 #dfdfdf #dfdfdf #808080;
-    padding: 15px;
+    padding: 12px;
     box-shadow: inset 1px 1px 0 #dfdfdf;
     overflow: auto;
 }
 
 .consumables-inventory h3 {
-    font-size: 14px;
-    margin-bottom: 12px;
-    color: #000080;
-    border-bottom: 2px solid #000080;
-    padding-bottom: 8px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: #003d9e;
+    border-bottom: 1px solid #c0c0c0;
+    padding-bottom: 6px;
 }
 
 .consumables-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .consumables-table thead {
-    background-color: #000080;
+    background-color: #003d9e;
     color: #fff;
 }
 
 .consumables-table th {
-    padding: 8px;
+    padding: 6px;
     text-align: left;
     font-weight: bold;
     border: 1px solid #808080;
 }
 
 .consumables-table td {
-    padding: 6px 8px;
+    padding: 5px 6px;
     border: 1px solid #e0e0e0;
 }
 
 .consumables-table tbody tr:nth-child(even) {
     background-color: #f5f5f5;
+}
+
+/* Footer */
+.footer {
+    background-color: #c0c0c0;
+    border-top: 2px solid;
+    border-color: #dfdfdf #808080 #808080 #dfdfdf;
+}
+
+.status-bar {
+    display: flex;
+    padding: 2px 2px;
+    border: 1px solid;
+    border-color: #dfdfdf #808080 #808080 #dfdfdf;
+    background-color: #c0c0c0;
+}
+
+.status-text {
+    font-size: 11px;
+    color: #000;
+    padding: 2px 4px;
+    flex: 1;
 }
 
 /* Scrollbar Styling */
@@ -405,7 +529,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
     background: #dfdfdf;
-    border: 2px solid;
+    border: 1px solid;
     border-color: #dfdfdf #808080 #808080 #dfdfdf;
 }
 
@@ -415,6 +539,10 @@ body {
 
 /* Responsive */
 @media (max-width: 1200px) {
+    .container {
+        width: 95%;
+    }
+
     .inventory-grid {
         grid-template-columns: 1fr;
         height: auto;
@@ -424,8 +552,21 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .detail-panel {
-        grid-template-columns: repeat(3, 1fr);
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .left-panel {
+        border-right: none;
+        border-bottom: 1px solid #c0c0c0;
+        flex-direction: row;
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .logo-container {
+        width: 100px;
+        height: 100px;
     }
 }
 

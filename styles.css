@@ -137,9 +137,14 @@ body {
 
 .info-text {
     font-size: 11px;
+    font-weight: normal;
+    color: #000;
+    line-height: 1.5;
+}
+
+.info-highlight {
     font-weight: bold;
     color: #003d9e;
-    line-height: 1.4;
 }
 
 .info-version {

@@ -63,6 +63,7 @@ const departments = [
 ];
 
 let selectedItem = null;
+let outboundData = null; // 출고 데이터 캐시
 
 // Equipment icons/emojis
 const equipmentIcons = {
@@ -289,27 +290,43 @@ function generateInboundData() {
     });
 }
 
-// Generate outbound data
+// Generate outbound data (한 번만 생성, 이후 캐시 사용)
 function generateOutboundData() {
     const tbody = document.getElementById('outboundData');
     tbody.innerHTML = '';
     
-    const staff = ['김철수', '이영희', '박민수', '최지은', '정준호'];
-    
-    equipmentData.forEach((item, index) => {
-        const row = document.createElement('tr');
-        const outQuantity = Math.floor(Math.random() * 10) + 1; // 1~10 사이의 랜덤 수량
-        const outDate = getRandomDateAfter(item.date, 365);
-        const randomItemIndex = Math.floor(Math.random() * equipmentData.length); // 랜덤 물품 선택
-        const randomItem = equipmentData[randomItemIndex];
+    // 이미 생성된 데이터가 있으면 그것을 사용
+    if (outboundData === null) {
+        const staff = ['김철수', '이영희', '박민수', '최지은', '정준호'];
+        outboundData = [];
         
+        equipmentData.forEach((item, index) => {
+            const outQuantity = Math.floor(Math.random() * 10) + 1; // 1~10 사이의 랜덤 수량
+            const outDate = getRandomDateAfter(item.date, 365);
+            const randomItemIndex = Math.floor(Math.random() * equipmentData.length); // 랜덤 물품 선택
+            const randomItem = equipmentData[randomItemIndex];
+            
+            outboundData.push({
+                date: outDate,
+                code: randomItem.code,
+                name: randomItem.name,
+                dept: departments[index % departments.length],
+                qty: outQuantity,
+                staff: staff[index % staff.length]
+            });
+        });
+    }
+    
+    // 캐시된 데이터를 테이블에 표시
+    outboundData.forEach(data => {
+        const row = document.createElement('tr');
         row.innerHTML = `
-            <td>${outDate}</td>
-            <td>${randomItem.code}</td>
-            <td>${randomItem.name}</td>
-            <td>${departments[index % departments.length]}</td>
-            <td>${outQuantity}</td>
-            <td>${staff[index % staff.length]}</td>
+            <td>${data.date}</td>
+            <td>${data.code}</td>
+            <td>${data.name}</td>
+            <td>${data.dept}</td>
+            <td>${data.qty}</td>
+            <td>${data.staff}</td>
         `;
         tbody.appendChild(row);
     });

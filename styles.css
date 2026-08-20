@@ -22,8 +22,8 @@ body {
 }
 
 .container {
-    width: 95vw;
-    height: 95vh;
+    width: 1500px;
+    height: 900px;
     background-color: #c0c0c0;
     border: 3px solid;
     border-color: #dfdfdf #808080 #808080 #dfdfdf;
@@ -32,8 +32,6 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    max-width: 1920px;
-    max-height: 1080px;
 }
 
 /* Header/Title Bar */
@@ -41,7 +39,7 @@ body {
     background: linear-gradient(to right, #000080, #1084d7);
     padding: 0;
     border-bottom: 3px solid #808080;
-    height: 50px;
+    height: 40px;
     flex-shrink: 0;
 }
 
@@ -55,7 +53,7 @@ body {
 
 .title-bar {
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     padding: 3px 6px;
     flex: 1;
@@ -68,13 +66,13 @@ body {
 }
 
 .control-btn {
-    width: 24px;
-    height: 22px;
+    width: 20px;
+    height: 18px;
     background-color: #c0c0c0;
     border: 2px solid;
     border-color: #dfdfdf #808080 #808080 #dfdfdf;
     padding: 0;
-    font-size: 13px;
+    font-size: 11px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -88,7 +86,7 @@ body {
 /* Main Content Layout */
 .main-content {
     display: grid;
-    grid-template-columns: 360px 1fr;
+    grid-template-columns: 320px 1fr;
     gap: 0;
     flex: 1;
     background-color: #fff;
@@ -99,22 +97,22 @@ body {
 .left-panel {
     background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
     border-right: 2px solid #c0c0c0;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
     overflow-y: auto;
     flex-shrink: 0;
 }
 
 .logo-container {
-    width: 320px;
-    height: 140px;
+    width: 280px;
+    height: 120px;
     background-color: #fff;
     border: 2px solid #c0c0c0;
     border-radius: 6px;
-    padding: 10px;
+    padding: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -131,14 +129,14 @@ body {
 .info-section {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.7);
-    padding: 12px;
+    padding: 10px;
     border-radius: 4px;
     width: 95%;
     flex-shrink: 0;
 }
 
 .info-text {
-    font-size: 20px;
+    font-size: 17px;
     font-weight: normal;
     color: #000;
     line-height: 1.6;
@@ -150,7 +148,7 @@ body {
 }
 
 .info-version {
-    font-size: 14px;
+    font-size: 12px;
     color: #666;
 }
 
@@ -166,31 +164,31 @@ body {
 /* Navigation Tabs */
 .nav-section {
     background-color: #f5f5f5;
-    padding: 12px 16px;
+    padding: 10px 12px;
     border-bottom: 2px solid #c0c0c0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
     flex-wrap: wrap;
-    min-height: 65px;
+    min-height: 55px;
     flex-shrink: 0;
 }
 
 .tabs {
     display: flex;
-    gap: 6px;
+    gap: 4px;
     flex: 1;
 }
 
 .tab-btn {
-    padding: 8px 20px;
+    padding: 7px 16px;
     background-color: #e0e0e0;
     border: 2px solid;
     border-color: #dfdfdf #808080 #808080 #dfdfdf;
     cursor: pointer;
     font-family: 'MS Sans Serif', Arial, sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: normal;
     color: #000;
     transition: all 0.1s;
@@ -215,29 +213,29 @@ body {
 
 .tab-controls {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     align-items: center;
 }
 
 .search-box {
-    padding: 6px 10px;
+    padding: 5px 8px;
     border: 2px solid;
     border-color: #808080 #dfdfdf #dfdfdf #808080;
     background-color: #fff;
     font-family: 'MS Sans Serif', Arial, sans-serif;
-    font-size: 14px;
-    width: 220px;
+    font-size: 12px;
+    width: 180px;
     box-shadow: inset 1px 1px 0 #dfdfdf;
 }
 
 .print-btn {
-    padding: 6px 16px;
+    padding: 5px 14px;
     background-color: #c0c0c0;
     border: 2px solid;
     border-color: #dfdfdf #808080 #808080 #dfdfdf;
     cursor: pointer;
     font-family: 'MS Sans Serif', Arial, sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: normal;
     box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #404040;
     white-space: nowrap;
@@ -249,7 +247,7 @@ body {
 
 /* Content Area */
 .content {
-    padding: 20px;
+    padding: 16px;
     overflow-y: auto;
     flex: 1;
     background-color: #fff;
@@ -267,19 +265,19 @@ body {
 }
 
 .tab-content h2 {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     color: #003d9e;
     border-bottom: 3px solid #003d9e;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
 }
 
 /* Inventory Grid - Product Cards */
 .inventory-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 16px;
     height: 100%;
 }
 
@@ -287,17 +285,17 @@ body {
     border: 2px solid;
     border-color: #808080 #dfdfdf #dfdfdf #808080;
     background-color: #fff;
-    padding: 16px;
+    padding: 14px;
     box-shadow: inset 1px 1px 0 #dfdfdf;
     overflow-y: auto;
     min-height: 500px;
 }
 
 .inventory-list h2, .inventory-detail h2 {
-    font-size: 15px;
+    font-size: 13px;
     font-weight: bold;
-    margin-bottom: 14px;
-    padding-bottom: 10px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
     border-bottom: 2px solid #c0c0c0;
     color: #000;
 }
@@ -305,23 +303,23 @@ body {
 #inventoryItems {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
+    gap: 12px;
 }
 
 /* Product Card Styling */
 .product-card {
     background-color: #f0f0f0;
     border: 2px solid #c0c0c0;
-    padding: 16px;
+    padding: 14px;
     cursor: pointer;
     transition: all 0.2s;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     text-align: center;
     border-radius: 4px;
-    min-height: 160px;
+    min-height: 140px;
     justify-content: center;
 }
 
@@ -338,19 +336,19 @@ body {
 }
 
 .product-icon {
-    font-size: 56px;
+    font-size: 48px;
     line-height: 1;
 }
 
 .product-name {
     font-weight: bold;
-    font-size: 14px;
+    font-size: 12px;
     margin: 2px 0;
     line-height: 1.3;
 }
 
 .product-code {
-    font-size: 12px;
+    font-size: 10px;
     color: #666;
     margin-bottom: 2px;
 }
@@ -360,9 +358,9 @@ body {
 }
 
 .product-quantity {
-    font-size: 13px;
+    font-size: 11px;
     color: #666;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .product-card.selected .product-quantity {
@@ -370,12 +368,12 @@ body {
 }
 
 .available-btn {
-    padding: 6px 14px;
+    padding: 5px 12px;
     background-color: #4a9eff;
     color: #fff;
     border: 2px solid #2a7ecf;
     border-radius: 3px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.2s;
@@ -391,47 +389,47 @@ body {
 
 /* Detail Panel */
 .detail-title {
-    margin-bottom: 16px;
-    padding-bottom: 12px;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
     border-bottom: 2px solid #c0c0c0;
 }
 
 .detail-title h3 {
-    font-size: 15px;
+    font-size: 13px;
     color: #003d9e;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .distribution-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    gap: 10px;
 }
 
 .dept-box {
     background-color: #f5f5f5;
     border: 2px solid #c0c0c0;
-    padding: 14px;
+    padding: 12px;
     text-align: center;
     border-radius: 4px;
 }
 
 .dept-name {
     font-weight: bold;
-    font-size: 12px;
-    margin-bottom: 10px;
+    font-size: 11px;
+    margin-bottom: 8px;
     color: #003d9e;
     line-height: 1.3;
 }
 
 .dept-count {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
     color: #d32f2f;
 }
 
 .dept-label {
-    font-size: 11px;
+    font-size: 10px;
     color: #666;
     margin-top: 4px;
     display: none;
@@ -443,7 +441,7 @@ body {
     border-collapse: collapse;
     background-color: #fff;
     border: 2px solid #c0c0c0;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .data-table thead {
@@ -452,16 +450,16 @@ body {
 }
 
 .data-table th {
-    padding: 12px;
+    padding: 10px;
     text-align: left;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     border: 1px solid #808080;
 }
 
 .data-table td {
-    padding: 10px 12px;
-    font-size: 14px;
+    padding: 8px 10px;
+    font-size: 12px;
     border: 1px solid #e0e0e0;
 }
 
@@ -477,47 +475,47 @@ body {
 .consumables-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 16px;
 }
 
 .instruction-box {
     background-color: #fff;
     border: 2px solid;
     border-color: #808080 #dfdfdf #dfdfdf #808080;
-    padding: 16px;
+    padding: 14px;
     box-shadow: inset 1px 1px 0 #dfdfdf;
     overflow-y: auto;
 }
 
 .instruction-box h3 {
-    font-size: 15px;
-    margin-bottom: 14px;
+    font-size: 13px;
+    margin-bottom: 12px;
     color: #003d9e;
     border-bottom: 2px solid #c0c0c0;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
 }
 
 .steps {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
 .step {
     background-color: #f5f5f5;
     border-left: 4px solid #003d9e;
-    padding: 12px;
+    padding: 10px;
 }
 
 .step h4 {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     color: #003d9e;
 }
 
 .step p {
-    font-size: 13px;
+    font-size: 11px;
     line-height: 1.5;
     color: #333;
 }
@@ -526,23 +524,23 @@ body {
     background-color: #fff;
     border: 2px solid;
     border-color: #808080 #dfdfdf #dfdfdf #808080;
-    padding: 16px;
+    padding: 14px;
     box-shadow: inset 1px 1px 0 #dfdfdf;
     overflow-y: auto;
 }
 
 .consumables-inventory h3 {
-    font-size: 15px;
-    margin-bottom: 14px;
+    font-size: 13px;
+    margin-bottom: 12px;
     color: #003d9e;
     border-bottom: 2px solid #c0c0c0;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
 }
 
 .consumables-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .consumables-table thead {
@@ -551,14 +549,14 @@ body {
 }
 
 .consumables-table th {
-    padding: 10px;
+    padding: 8px;
     text-align: left;
     font-weight: bold;
     border: 1px solid #808080;
 }
 
 .consumables-table td {
-    padding: 8px 10px;
+    padding: 6px 8px;
     border: 1px solid #e0e0e0;
 }
 
@@ -571,7 +569,7 @@ body {
     background-color: #c0c0c0;
     border-top: 3px solid;
     border-color: #dfdfdf #808080 #808080 #dfdfdf;
-    height: 32px;
+    height: 28px;
     flex-shrink: 0;
 }
 
@@ -585,7 +583,7 @@ body {
 }
 
 .status-text {
-    font-size: 14px;
+    font-size: 12px;
     color: #000;
     padding: 3px 6px;
     flex: 1;
@@ -593,8 +591,8 @@ body {
 
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
 }
 
 ::-webkit-scrollbar-track {
@@ -614,8 +612,8 @@ body {
 /* Responsive */
 @media (max-width: 1600px) {
     .container {
-        width: 95vw;
-        height: 95vh;
+        width: 95%;
+        height: 90vh;
     }
 
     .inventory-grid {
@@ -634,13 +632,13 @@ body {
         border-right: none;
         border-bottom: 2px solid #c0c0c0;
         flex-direction: row;
-        gap: 20px;
-        padding: 16px;
+        gap: 15px;
+        padding: 12px;
     }
 
     .logo-container {
-        width: 280px;
-        height: 120px;
+        width: 220px;
+        height: 100px;
     }
 
     #inventoryItems {

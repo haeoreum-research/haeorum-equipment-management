@@ -23,7 +23,7 @@ body {
 
 .container {
     width: 1500px;
-    height: 900px;
+    height: 950px;
     background-color: #c0c0c0;
     border: 3px solid;
     border-color: #dfdfdf #808080 #808080 #dfdfdf;
@@ -139,7 +139,7 @@ body {
     font-size: 15px;
     font-weight: normal;
     color: #000;
-    line-height: 1.6;
+    line-height: 1.4;
 }
 
 .info-highlight {
